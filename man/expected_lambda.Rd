@@ -2,16 +2,22 @@
 % Please edit documentation in R/exp_lambda.R
 \name{expected_lambda}
 \alias{expected_lambda}
-\title{Expected_attendance}
+\title{Expected attendance based on weather conditions}
 \usage{
 expected_lambda(city_weather)
 }
 \arguments{
-\item{city_weather}{A CityWeather object}
+\item{city_weather}{A CityWeather object containing temperature, humidity and pressure}
 }
 \value{
-Expected Poisson rate λ
+Expected Poisson rate λ for number of guests
 }
 \description{
-Expected_attendance
+Expected attendance based on weather conditions
+}
+\examples{
+\dontrun{
+weather <- CityWeather("Bern", 14.2, 65, 1012)
+expected_lambda(weather)
+}
 }

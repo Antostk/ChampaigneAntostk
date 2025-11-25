@@ -54,39 +54,3 @@ volume_between.Glass_Profile <- function(x) {
   result <- integrate(integrand, lower = x$a, upper = x$b)
   result$value
 }
-
-
-##test
-test_that("GlassProfile creates valid object", {
-  glass <- GlassProfile(
-    a = 2.0, b = 10.0,
-    x_1 = 1.0, x_2 = 2.0, x_3 = 8.0, x_4 = 12.0,
-    r_foot = 3.0, r_stem = 0.4, r_bowl = 3.5, r_rim = 4.0
-  )
-
-  expect_s3_class(glass, "Glass_Profile")
-  expect_named(glass, c("a", "b", "x1", "x2", "x3", "x4",
-                        "r_foot", "r_stem", "r_bowl", "r_rim"))
-})
-
-test_that("radius_cone returns non-negative values", {
-  glass <- GlassProfile(
-    a = 2.0, b = 10.0,
-    x_1 = 1.0, x_2 = 2.0, x_3 = 8.0, x_4 = 12.0,
-    r_foot = 3.0, r_stem = 0.4, r_bowl = 3.5, r_rim = 4.0
-  )
-
-  radius <- radius_cone(glass, t = 5.0)
-  expect_gte(radius, 0)
-})
-
-test_that("volume_between returns positive volume", {
-  glass <- GlassProfile(
-    a = 2.0, b = 10.0,
-    x_1 = 1.0, x_2 = 2.0, x_3 = 8.0, x_4 = 12.0,
-    r_foot = 3.0, r_stem = 0.4, r_bowl = 3.5, r_rim = 4.0
-  )
-
-  volume <- volume_between(glass)
-  expect_gt(volume, 0)
-})

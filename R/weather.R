@@ -32,32 +32,3 @@ print.City_Weather <- function(x, ...) {
     cat("  Pressure   :", x$pressure, "hPa\n")
   }
 }
-
-
-##test
-
-
-test_that("CityWeather creates valid object", {
-  weather <- CityWeather("Bern", 14.2, 65, 1012)
-
-  expect_s3_class(weather, "City_Weather")
-  expect_equal(weather$city, "Bern")
-  expect_equal(weather$temperature, 14.2)
-  expect_equal(weather$humidity, 65)
-  expect_equal(weather$pressure, 1012)
-})
-
-test_that("expected_lambda returns finite value", {
-  weather <- CityWeather("Bern", 14.2, 65, 1012)
-  lambda <- expected_lambda(weather)
-
-  expect_true(is.finite(lambda))
-  expect_gt(lambda, 0)
-})
-
-test_that("expected_lambda handles missing data", {
-  weather <- CityWeather("Test", NULL, 65, 1012)
-  lambda <- expected_lambda(weather)
-
-  expect_true(is.na(lambda))
-})

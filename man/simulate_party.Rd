@@ -2,7 +2,7 @@
 % Please edit documentation in R/simulate.R
 \name{simulate_party}
 \alias{simulate_party}
-\title{Simulate_champagne}
+\title{Simulate champagne consumption for a party}
 \usage{
 simulate_party(city_name, data, N = 1000, seed = 123L, bottle_L = 0.75)
 }
@@ -21,5 +21,11 @@ simulate_party(city_name, data, N = 1000, seed = 123L, bottle_L = 0.75)
 List containing simulation outputs
 }
 \description{
-Simulate_champagne
+Simulate champagne consumption for a party
+}
+\examples{
+\dontrun{
+data(list("processed_data"))
+results <- simulate_party("Bern", processed_data)
+}
 }

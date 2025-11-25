@@ -75,36 +75,3 @@ simulate_party <- function(city_name, data,
     expected_guests = lambda
   )
 }
-
-#test
-
-test_that("simulate_party returns expected structure", {
-  # Create test data
-  test_data <- data.frame(
-    city = "TestCity",
-    temperature = 20,
-    humidity = 50,
-    pressure = 1013,
-    stringsAsFactors = FALSE
-  )
-
-  results <- simulate_party("TestCity", test_data, N = 10)
-
-  expect_named(results, c("total_liters", "total_bottles", "guest_counts",
-                          "expected_guests", "city"))
-  expect_length(results$total_liters, 10)
-  expect_length(results$total_bottles, 10)
-  expect_length(results$guest_counts, 10)
-})
-
-test_that("simulate_party handles missing city", {
-  test_data <- data.frame(
-    city = "OtherCity",
-    temperature = 20,
-    humidity = 50,
-    pressure = 1013,
-    stringsAsFactors = FALSE
-  )
-
-  expect_error(simulate_party("NonExistentCity", test_data))
-})
