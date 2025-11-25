@@ -57,7 +57,6 @@ volume_between.Glass_Profile <- function(x) {
 
 
 ##test
-
 test_that("GlassProfile creates valid object", {
   glass <- GlassProfile(
     a = 2.0, b = 10.0,

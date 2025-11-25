@@ -56,5 +56,35 @@ r_vec_for_integrate <- function(
          x1 = x1, x2 = x2, x3 = x3, x4 = x4,
          r_foot = r_foot, r_stem = r_stem,
          r_bowl = r_bowl, r_rim = r_rim)
+
+
 }
 
+##test
+
+test_that("S function returns values between 0 and 1", {
+  expect_equal(S(0), 0)
+  expect_equal(S(1), 1)
+  expect_gte(S(0.5), 0)
+  expect_lte(S(0.5), 1)
+})
+
+test_that("r_scalar returns correct radius values", {
+  radius <- r_scalar(
+    t = 5.0, x1 = 1.0, x2 = 2.0, x3 = 8.0, x4 = 12.0,
+    r_foot = 3.0, r_stem = 0.4, r_bowl = 3.5, r_rim = 4.0
+  )
+
+  expect_gte(radius, 0)
+  expect_true(is.numeric(radius))
+})
+
+test_that("r_vec_for_integrate returns vector of correct length", {
+  radii <- r_vec_for_integrate(
+    t = c(1, 5, 10), x1 = 1.0, x2 = 2.0, x3 = 8.0, x4 = 12.0,
+    r_foot = 3.0, r_stem = 0.4, r_bowl = 3.5, r_rim = 4.0
+  )
+
+  expect_length(radii, 3)
+  expect_true(all(radii >= 0))
+})

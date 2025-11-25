@@ -2,7 +2,7 @@ Package: champagneAntostk
 Title: Champagne Party Planning Based on Weather Conditions
 Version: 0.1.0
 Authors@R: 
-    person("Your", "Name", email = "your.email@domain.com", role = c("aut", "cre"))
+    person("Antoine", "Stk", email = "your.email@domain.com", role = c("aut", "cre"))
 Description: Simulates champagne consumption for parties based on weather conditions.
     Uses weather data to predict guest attendance and calculates champagne needs.
 License: MIT + file LICENSE
