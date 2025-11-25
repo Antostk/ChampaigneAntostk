@@ -2,10 +2,12 @@
 % Please edit documentation in R/weather.R
 \name{CityWeather}
 \alias{CityWeather}
-\title{City Weather Class}
+\title{City_Weather_Class
+Stores weather information for a given city.}
 \usage{
 CityWeather(city, temperature, humidity, pressure)
 }
 \description{
+City_Weather_Class
 Stores weather information for a given city.
 }

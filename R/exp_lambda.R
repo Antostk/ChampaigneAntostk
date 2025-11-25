@@ -1,6 +1,6 @@
 #expected lambda
-#' Expected attendance based on weather
-#'
+#' @title Expected_attendance
+
 #' @param city_weather A CityWeather object
 #' @return Expected Poisson rate λ
 #'

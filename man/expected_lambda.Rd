@@ -2,7 +2,7 @@
 % Please edit documentation in R/exp_lambda.R
 \name{expected_lambda}
 \alias{expected_lambda}
-\title{Expected attendance based on weather}
+\title{Expected_attendance}
 \usage{
 expected_lambda(city_weather)
 }
@@ -13,5 +13,5 @@ expected_lambda(city_weather)
 Expected Poisson rate λ
 }
 \description{
-Expected attendance based on weather
+Expected_attendance
 }

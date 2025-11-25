@@ -2,10 +2,12 @@
 % Please edit documentation in R/Glass.R
 \name{GlassProfile}
 \alias{GlassProfile}
-\title{Glass Profile Class}
+\title{Profile_Class
+Stores geometric parameters describing a champagne glass.}
 \usage{
 GlassProfile(a, b, x_1, x_2, x_3, x_4, r_foot, r_stem, r_bowl, r_rim)
 }
 \description{
+Profile_Class
 Stores geometric parameters describing a champagne glass.
 }

@@ -1,7 +1,7 @@
 #simulation
 
-#' Simulate champagne consumption for a party
-#'
+#' @title Simulate_champagne
+
 #' @param city_name Name of city
 #' @param data Weather data list
 #' @param N Number of simulation runs

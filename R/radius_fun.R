@@ -1,8 +1,8 @@
 ##part containing radius function
 
 
-#' Easing function S(z)
-#'
+#' @title Easing_function_S(z)
+
 #' Smooth transition function used to model glass curvature.
 #'
 #' @param z Scaled value between 0 and 1

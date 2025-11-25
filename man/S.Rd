@@ -2,7 +2,8 @@
 % Please edit documentation in R/radius_fun.R
 \name{S}
 \alias{S}
-\title{Easing function S(z)}
+\title{Easing_function_S(z)
+Smooth transition function used to model glass curvature.}
 \usage{
 S(z)
 }
@@ -13,5 +14,6 @@ S(z)
 Numeric value of easing function
 }
 \description{
+Easing_function_S(z)
 Smooth transition function used to model glass curvature.
 }

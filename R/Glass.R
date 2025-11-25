@@ -2,8 +2,8 @@
 
 #this will contain glass profile, radius cone, volume between
 
-#' Glass Profile Class
-#'
+#' @title Profile_Class
+
 #' Stores geometric parameters describing a champagne glass.
 #'
 #' @export

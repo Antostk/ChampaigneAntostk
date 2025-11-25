@@ -2,7 +2,7 @@
 % Please edit documentation in R/simulate.R
 \name{simulate_party}
 \alias{simulate_party}
-\title{Simulate champagne consumption for a party}
+\title{Simulate_champagne}
 \usage{
 simulate_party(city_name, data, N = 1000, seed = 123L, bottle_L = 0.75)
 }
@@ -21,5 +21,5 @@ simulate_party(city_name, data, N = 1000, seed = 123L, bottle_L = 0.75)
 List containing simulation outputs
 }
 \description{
-Simulate champagne consumption for a party
+Simulate_champagne
 }

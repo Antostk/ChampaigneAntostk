@@ -1,7 +1,7 @@
 #weather function
 
-#' City Weather Class
-#'
+#' @title City_Weather_Class
+
 #' Stores weather information for a given city.
 #'
 #' @export
