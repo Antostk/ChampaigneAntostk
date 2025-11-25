@@ -1,9 +1,13 @@
-#expected lambda
-#' @title Expected_attendance
-
-#' @param city_weather A CityWeather object
-#' @return Expected Poisson rate λ
+#' Expected attendance based on weather conditions
 #'
+#' @param city_weather A CityWeather object containing temperature, humidity and pressure
+#' @return Expected Poisson rate λ for number of guests
+#'
+#' @examples
+#' \dontrun{
+#' weather <- CityWeather("Bern", 14.2, 65, 1012)
+#' expected_lambda(weather)
+#' }
 #' @export
 expected_lambda <- function(city_weather) {
   if (any(is.null(c(city_weather$temperature,

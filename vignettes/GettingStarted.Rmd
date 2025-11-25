@@ -1,0 +1,81 @@
+---
+title: "Champagne Party Planner"
+author: "Antoine Pariat"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Champagne Party Planner}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(champagneUSERNAME)
+```
+
+## Introduction
+
+This package helps you plan champagne parties by simulating guest attendance and champagne consumption based on weather conditions.
+
+## Basic Usage
+
+### 1. Create a Glass Profile
+
+```{r}
+glass <- GlassProfile(
+  a = 2.0, b = 10.0,
+  x_1 = 1.0, x_2 = 2.0, x_3 = 8.0, x_4 = 12.0,
+  r_foot = 3.0, r_stem = 0.4,
+  r_bowl = 3.5, r_rim = 4.0
+)
+
+# Check the volume
+volume <- volume_between(glass)
+cat(sprintf("Glass volume: %.0f mL\n", volume))
+```
+
+### 2. Check Weather Conditions
+
+```{r}
+data(processed_data)
+head(processed_data)
+
+# Create weather object for Bern
+bern_weather <- CityWeather(
+  city = "Bern",
+  temperature = processed_data$temperature[1],
+  humidity = processed_data$humidity[1],
+  pressure = processed_data$pressure[1]
+)
+
+print(bern_weather)
+```
+
+### 3. Estimate Guest Attendance
+
+```{r}
+lambda <- expected_lambda(bern_weather)
+cat(sprintf("Expected number of guests: %.1f\n", lambda))
+```
+
+### 4. Simulate Party
+
+```{r}
+results <- simulate_party("Bern", processed_data, N = 100)
+
+cat("Simulation Results:\n")
+cat(sprintf("Average guests: %.1f\n", mean(results$guest_counts)))
+cat(sprintf("Average bottles needed: %.1f\n", mean(results$total_bottles)))
+cat(sprintf("95%% percentile bottles: %.0f\n", quantile(results$total_bottles, 0.95)))
+```
+
+## Conclusion
+
+This package provides a comprehensive tool for party planning, taking into account weather conditions and realistic champagne consumption patterns.

@@ -1,5 +1,15 @@
 #processed data documentation
 
+#' Process raw weather data from JSON file
+#'
+#' @param json_path Path to the raw JSON file
+#' @return Processed data frame with weather information
+#'
+#' @examples
+#' \dontrun{
+#' processed_data <- process_weather_data("data-raw/weather_full.json")
+#' }
+#'
 # processed data documentation
 
 #' Processed weather data

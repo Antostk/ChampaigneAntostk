@@ -1,19 +1,22 @@
-Package: ChampagneAntostk
-Type: Package
-Title: What the Package Does (Title Case)
+Package: champagneAntostk
+Title: Champagne Party Planning Based on Weather Conditions
 Version: 0.1.0
-Authors@R: c(
-    person(
-      "Jane", "Doe",
-      email = "jane@example.com",
-      role = c("aut", "cre")
-    )
-  )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
-License: What license is it under?
+Authors@R: 
+    person("Your", "Name", email = "your.email@domain.com", role = c("aut", "cre"))
+Description: Simulates champagne consumption for parties based on weather conditions.
+    Uses weather data to predict guest attendance and calculates champagne needs.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.3
-Depends: 
-    R (>= 3.5)
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+Imports:
+    jsonlite,
+    stats
+Suggests:
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown,
+    usethis
+VignetteBuilder: knitr
+Config/testthat/edition: 3
